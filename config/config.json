@@ -1,0 +1,39 @@
+{
+  "NODE_ENV": "test",
+  "development": {
+    "PORT": 3000,
+    "port": 5432,
+    "JWT_KEY": "token",
+    "JWT_SECRET": "SOME TEXT ",
+    "SECURE": false,
+    "username": "postgres",
+    "password": "password",
+    "database": "auth-db-dev",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "PORT": 3000,
+    "port": 5432,
+    "JWT_KEY": "token",
+    "JWT_SECRET": "SOME TEXT ",
+    "SECURE": false,
+    "username": "postgres",
+    "password": "password",
+    "database": "auth-db-test",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "PORT": 3000,
+    "port": 5432,
+    "JWT_KEY": "token",
+    "JWT_SECRET": "SOME TEXT ",
+    "SECURE": false,
+    "username": "postgres",
+    "password": "password",
+    "database": "auth-db",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

@@ -1,21 +1,22 @@
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { QueryTypes } from 'sequelize';
+import { Sequelize } from 'sequelize-typescript';
 import { User } from './../users';
 
 @Module({
   imports: [
     SequelizeModule.forRoot({
-      database: 'bma',
+      database: process.env.DATABASE,
       dialect: 'postgres',
-      host: 'localhost',
       port: 5432,
-      username: 'postgres',
-      password: 'password',
+      host: process.env.DB_HOST,
+      username: process.env.DB_USERNAME,
+      password: process.env.DB_PASSWORD,
       models: [User],
       autoLoadModels: true,
       logging: false,
       sync: {
-        // Set them to false in testing.
         force: true,
         alter: true,
       },

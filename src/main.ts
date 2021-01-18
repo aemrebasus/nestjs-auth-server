@@ -1,8 +1,18 @@
-// Applicaiton configuration must be loaded first.
 //-------------App Configuration ------------------------
-import { config } from 'dotenv';
+
 import { join } from 'path';
-config({ path: join(process.cwd(), '.config') });
+import { readFileSync } from 'fs';
+
+const CONFIG_PATH = join(process.cwd(), 'config', 'config.json');
+const CONFIGURATION = JSON.parse(
+  readFileSync(CONFIG_PATH, { encoding: 'utf8' }),
+);
+
+for (const [key, value] of Object.entries(
+  CONFIGURATION[CONFIGURATION['NODE_ENV']],
+)) {
+  process.env[key] = value[key];
+}
 //-------------App Configuration ------------------------
 
 import { NestFactory } from '@nestjs/core';

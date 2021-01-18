@@ -9,6 +9,12 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private reflector: Reflector) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
+    // Check the secure property is set false or not
+    // If secure property is false, allow all the requests.
+    if (process.env.SECURE !== 'true') {
+      return true;
+    }
+
     // Retrive Public Decorator metadata
     const isPublic = this.reflector.getAllAndOverride<boolean>(IS_PUBLIC_KEY, [
       context.getHandler(),
