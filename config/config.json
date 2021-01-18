@@ -1,7 +1,7 @@
 {
-  "NODE_ENV": "test",
+  "NODE_ENV": "development",
   "development": {
-    "PORT": 3000,
+    "APP_PORT": 3000,
     "port": 5432,
     "JWT_KEY": "token",
     "JWT_SECRET": "SOME TEXT ",
@@ -13,7 +13,7 @@
     "dialect": "postgres"
   },
   "test": {
-    "PORT": 3000,
+    "APP_PORT": 3000,
     "port": 5432,
     "JWT_KEY": "token",
     "JWT_SECRET": "SOME TEXT ",
@@ -25,11 +25,11 @@
     "dialect": "postgres"
   },
   "production": {
-    "PORT": 3000,
+    "APP_PORT": 3000,
     "port": 5432,
     "JWT_KEY": "token",
     "JWT_SECRET": "SOME TEXT ",
-    "SECURE": false,
+    "SECURE": true,
     "username": "postgres",
     "password": "password",
     "database": "auth-db",
