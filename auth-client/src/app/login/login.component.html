@@ -1,1 +1,4 @@
-<p>login works!</p>
+<app-form-wrapper [formTitle]="form.formTitle">
+  <ae-dynamic-form #loginForm [input]="form" (submitted)="submit($event)">
+  </ae-dynamic-form>
+</app-form-wrapper>
